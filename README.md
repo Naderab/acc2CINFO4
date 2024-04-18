@@ -1,6 +1,9 @@
 # Acc2cinfo4
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.10.
+## Install dependencies
+
+Run `npm install` or `yarn install` to install the dependencies and create the folder node_modules.
 
 ## Development server
 
