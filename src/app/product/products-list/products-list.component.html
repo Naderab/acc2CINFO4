@@ -1,0 +1,40 @@
+<input type="text" [(ngModel)]="color">
+<h3 [style.color]="color">{{title}}</h3><!--Interpolation {{variable}}-->
+ID : {{product.id}}
+Name : {{product.name}}
+Quantity : {{product.quantity}}
+<!--<button (click)="Buy()" [disabled]="product.quantity == 0">Buy</button>-->
+<p [hidden]="product.nb_likes < 5">Best product</p>
+<!--property Binding [property]="value"-->
+
+<!-- Directives (ngFor)-->
+<div *ngIf="products.length == 0">No Product found !</div>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Nb_likes</th>
+    </tr>
+    <tr *ngFor="let element of products ">
+        <td>{{element.id}}</td>
+        <td>{{element.name}}</td>
+        <td>{{element.quantity}}</td>
+        <td>{{element.nb_likes}}</td>
+        <button (click)="Buy(element)" [disabled]="product.quantity == 0">Buy</button>
+
+    </tr>
+</table>
+<h1>Panier</h1>
+<table *ngIf="panier.length > 0">
+    <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+    </tr>
+    <tr *ngFor="let p of panier">
+        <td>{{p.product.name}}</td>
+        <td>{{p.quantity}}</td>
+    </tr>
+</table>
+
+<div *ngIf="panier.length == 0">Panier vide</div>

@@ -3,16 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FooterComponent } from './footer/footer.component';
+import { ProductModule } from './product/product.module';
+import { ResidencesComponent } from './residences/residences.component';
 
-@NgModule({
+@NgModule({ //Annotation / Decorator => TypeScript
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent,
+    FooterComponent,
+    ResidencesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ProductModule
   ],
-  providers: [],
+  providers: [], //Services
   bootstrap: [AppComponent]
 })
 export class AppModule { }
