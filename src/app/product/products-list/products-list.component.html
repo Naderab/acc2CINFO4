@@ -22,7 +22,6 @@ Quantity : {{product.quantity}}
         <td>{{element.quantity}}</td>
         <td>{{element.nb_likes}}</td>
         <button (click)="Buy(element)" [disabled]="product.quantity == 0">Buy</button>
-
     </tr>
 </table>
 <h1>Panier</h1>
@@ -37,4 +36,4 @@ Quantity : {{product.quantity}}
     </tr>
 </table>
 
-<div *ngIf="panier.length == 0">Panier vide</div>
+<div *ngIf="panier.length == 0" >Panier vide</div>

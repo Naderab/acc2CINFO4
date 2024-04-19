@@ -7,6 +7,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductModule } from './product/product.module';
 import { ResidencesComponent } from './residences/residences.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({ //Annotation / Decorator => TypeScript
   declarations: [
@@ -18,7 +19,8 @@ import { ResidencesComponent } from './residences/residences.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProductModule
+    ProductModule,
+    FormsModule
   ],
   providers: [], //Services
   bootstrap: [AppComponent]
