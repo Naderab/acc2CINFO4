@@ -1,1 +1,35 @@
-<p>form-residence works!</p>
+<!--<input [formControl]="name" />
+
+{{name.value}}-->
+
+<form [formGroup]="residence">
+    <input formControlName="name" placeholder="Enter the residence name">
+    <div *ngIf="residence.get('name')!.invalid && ( residence.get('name')!.touched ||residence.get('name')!.dirty )">
+    <div *ngIf="residence.get('name')!.errors!['required']">
+        Name is required!
+    </div>
+    <div *ngIf="residence.get('name')!.errors!['minlength']">
+        Name must have at least 3 characters!
+
+    </div>
+</div>
+    <div formGroupName="address" >
+        <input formControlName="street">
+        <input formControlName="city">
+    </div>   
+    <input formControlName="image">
+    <input type="submit" (click)="add()" [disabled]="residence.invalid">
+</form>
+{{residence.get('name')!.touched}}
+{{residence.get('name')!.dirty}}
+{{residence.get('name')!.errors | json}}
+
+
+
+{{residence.value.name}}
+{{residence.value.address.street}}
+{{residence.value.address.city}}
+
+{{residence.value.image}}
+
+

@@ -6,7 +6,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductModule } from './product/product.module';
 import { ResidencesComponent } from './residences/residences.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormResidenceComponent } from './form-residence/form-residence.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailsResidenceComponent } from './details-residence/details-residence.component';
@@ -26,7 +26,8 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     ProductModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [], //Services
   bootstrap: [AppComponent]
