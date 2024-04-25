@@ -18,6 +18,9 @@
         <input formControlName="city">
     </div>   
     <input formControlName="image">
+    <div *ngIf="residence.get('image')!.invalid && ( residence.get('image')!.touched ||residence.get('image')!.dirty )">
+            Image is required!
+        </div>
     <input type="submit" (click)="add()" [disabled]="residence.invalid">
 </form>
 {{residence.get('name')!.touched}}

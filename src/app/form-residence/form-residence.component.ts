@@ -16,7 +16,7 @@ export class FormResidenceComponent {
           street: new FormControl(""),
           city: new FormControl("")
         }),
-        image:new FormControl("")
+        image:new FormControl("",[Validators.required])
     }
   )
   

@@ -1,0 +1,42 @@
+<div class="container">
+<form [formGroup]="apartment">
+    <div class="mb-3">
+    <label class="form-label">
+        Apart number
+        </label>
+        <input class="form-control" formControlName="apartNum"><br>
+    </div>
+    <div class="alert alert-danger" *ngIf="apartment.get('apartNum')!.invalid && (apartment.get('apartNum')!.touched || apartment.get('apartNum')!.dirty)">
+        <div *ngIf="apartment.get('apartNum')!.errors!['required']">
+
+            Apart number is required!
+
+        </div>
+        <div *ngIf="apartment.get('apartNum')!.errors!['pattern']">
+
+            Apart number must contains only numbers
+
+        </div>
+    </div>
+    Floor num : <input formControlName="floorNum"><br>
+    Surface : <input formControlName="surface"><br>
+    Terrace : <br>
+    <input type="radio" formControlName="terrace" value="yes">Yes
+    <input type="radio" formControlName="terrace" value="no">No
+<br>
+    <div *ngIf="apartment.get('terrace')!.value == 'yes'">
+    Surface Terrace :<br>
+    <input formControlName="surfaceTerrace">
+    </div>
+    Category :<br>
+    <input type="radio" formControlName="category" value="s+1">S+1
+    <input type="radio" formControlName="category" value="s+2">S+2
+    <input type="radio" formControlName="category" value="s+3">S+3
+<br>
+    Description :<br>
+    <textarea formControlName="description"></textarea><br>
+    <input type="submit">
+
+
+</form>
+</div>

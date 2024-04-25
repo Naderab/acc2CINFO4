@@ -11,6 +11,7 @@ import { FormResidenceComponent } from './form-residence/form-residence.componen
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailsResidenceComponent } from './details-residence/details-residence.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormApartementComponent } from './form-apartement/form-apartement.component';
 
 @NgModule({ //Annotation / Decorator => TypeScript
   declarations: [
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
     ResidencesComponent,
     FormResidenceComponent,
     NotFoundComponent,
-    DetailsResidenceComponent
+    DetailsResidenceComponent,
+    FormApartementComponent
   ],
   imports: [
     BrowserModule,

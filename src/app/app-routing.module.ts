@@ -4,6 +4,7 @@ import { ResidencesComponent } from "./residences/residences.component";
 import { FormResidenceComponent } from "./form-residence/form-residence.component";
 import { DetailsResidenceComponent } from "./details-residence/details-residence.component";
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FormApartementComponent } from "./form-apartement/form-apartement.component";
 
 const t: Routes = [
   {
@@ -14,6 +15,7 @@ const t: Routes = [
       { path: ':id', component: DetailsResidenceComponent },
     ],
   },
+  {path:'forma',component:FormApartementComponent},
   { path: 'form', component: FormResidenceComponent },
   { path: '**', component: NotFoundComponent },
 ];
