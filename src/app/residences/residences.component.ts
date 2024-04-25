@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Residence } from '../core/models/residence';
 import { Apartment } from '../core/models/apartement';
+import { ResidenceService } from '../core/services/residence.service';
 
 @Component({
   selector: 'app-residences',
@@ -8,34 +9,11 @@ import { Apartment } from '../core/models/apartement';
   styleUrls: ['./residences.component.css'],
 })
 export class ResidencesComponent {
-  searchText!: string;
-  listResidences: Residence[] = [
-    {
-      id: 1,
-      name: 'El fel',
-      address: 'Borj Cedria',
-      image: '../../assets/images/R1.jpg',
-    },
-    {
-      id: 2,
-      name: 'El yasmine',
-      address: 'Ezzahra',
-      image: '../../assets/images/R2.jpg',
-    },
-    {
-      id: 3,
-      name: 'El Arij',
-      address: 'Rades',
-      image: '../../assets/images/R3.jpg',
-    },
-    {
-      id: 4,
-      name: 'El Anber',
-      address: 'Manzah 5',
-      image: '../../assets/images/R4.jpg',
-    },
-  ];
-  listApartments: Apartment[] = [
+listApartments: Apartment[] = []
+  constructor(private rs: ResidenceService) {
+    this.listResidences = this.rs.listResidencesService;
+    console.log(this.rs.getSameValueOf(this.listApartments,'category','S+1'))
+  this.listApartments= [
     {
       id: 1,
       appartNum: 1,
@@ -81,6 +59,11 @@ export class ResidencesComponent {
       residence: this.listResidences[1],
     },
   ];
+  }
+  searchText!: string;
+  listResidences: Residence[] = [
+  ];
+  
   listApartementsFiltred: Apartment[] = [];
   listApartementsSearch: Apartment[] = [];
 
@@ -92,8 +75,8 @@ export class ResidencesComponent {
   }
 
   searchSurface() {
-    this.listApartementsSearch = this.listApartementsFiltred.filter(
-      (o) => o.surface == Number(this.searchText)
+    this.listApartementsSearch = this.rs.getSameValueOf(
+      this.listApartementsFiltred,'surface',Number(this.searchText)
     );
   }
 }

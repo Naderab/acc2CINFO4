@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ResidenceService } from '../core/services/residence.service';
+import { Residence } from '../core/models/residence';
 
 @Component({
   selector: 'app-details-residence',
@@ -7,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class DetailsResidenceComponent {
 
+  residence!: Residence;
+  constructor(private ar: ActivatedRoute,private rs:ResidenceService) {
+    console.log(this.ar.snapshot.params['id'])
+    this.residence = this.rs.getResidenceById(this.ar.snapshot.params['id'])
+  }
 }

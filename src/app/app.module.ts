@@ -12,6 +12,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailsResidenceComponent } from './details-residence/details-residence.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormApartementComponent } from './form-apartement/form-apartement.component';
+import { ResidenceService } from './core/services/residence.service';
 
 @NgModule({ //Annotation / Decorator => TypeScript
   declarations: [
@@ -26,7 +27,7 @@ import { FormApartementComponent } from './form-apartement/form-apartement.compo
   ],
   imports: [
     BrowserModule,
-    ProductModule,
+    //ProductModule,
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule

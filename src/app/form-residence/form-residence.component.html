@@ -13,10 +13,11 @@
 
     </div>
 </div>
-    <div formGroupName="address" >
+    <!--<div formGroupName="address" >
         <input formControlName="street">
         <input formControlName="city">
-    </div>   
+    </div>  -->
+    <input formControlName="address">
     <input formControlName="image">
     <div *ngIf="residence.get('image')!.invalid && ( residence.get('image')!.touched ||residence.get('image')!.dirty )">
             Image is required!
@@ -30,8 +31,7 @@
 
 
 {{residence.value.name}}
-{{residence.value.address.street}}
-{{residence.value.address.city}}
+
 
 {{residence.value.image}}
 

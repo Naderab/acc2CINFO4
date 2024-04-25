@@ -11,9 +11,9 @@
         <td>{{r.address}}</td>
         <td><img [src]="r.image" width="50" height="50"></td>
         <td><button (click)="showApartementByResidence(r.id)">Show apartement</button></td>
+        <td><a [routerLink]="['/residence/',r.id]" >To Details</a></td>
     </tr>
 </table>
-
 <h1>List apartements</h1>
 <input type="text" [(ngModel)]="searchText">
 <button (click)="searchSurface()">Search</button>
@@ -29,7 +29,6 @@
         <td>{{a.id}}</td>
         <td>{{a.appartNum}}</td>
         <td>{{a.surface}}</td>
-
         <td>{{a.floorNum}}</td>
         <td>{{a.residence.name}}</td>
 
