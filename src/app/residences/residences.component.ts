@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Residence } from '../core/models/residence';
 import { Apartment } from '../core/models/apartement';
 import { ResidenceService } from '../core/services/residence.service';
+import { ConsumerService } from '../core/services/consumer.service';
 
 @Component({
   selector: 'app-residences',
@@ -10,8 +11,12 @@ import { ResidenceService } from '../core/services/residence.service';
 })
 export class ResidencesComponent {
 listApartments: Apartment[] = []
-  constructor(private rs: ResidenceService) {
-    this.listResidences = this.rs.listResidencesService;
+  constructor(private rs: ResidenceService,private consumer:ConsumerService) {
+    //this.listResidences = this.rs.listResidencesService;
+    this.consumer.getResidences().subscribe({
+      next: (data) => this.listResidences = data,
+      error : (e) => alert(e.message)
+    })
     console.log(this.rs.getSameValueOf(this.listApartments,'category','S+1'))
   this.listApartments= [
     {

@@ -33,6 +33,10 @@ export class ResidenceService {
     },
   ];
 
+
+  
+
+
   addResidenceService(r:Residence) {
     this.listResidencesService.push(r);
   }

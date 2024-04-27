@@ -13,7 +13,7 @@ import { DetailsResidenceComponent } from './details-residence/details-residence
 import { AppRoutingModule } from './app-routing.module';
 import { FormApartementComponent } from './form-apartement/form-apartement.component';
 import { ResidenceService } from './core/services/residence.service';
-
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({ //Annotation / Decorator => TypeScript
   declarations: [
     AppComponent,
@@ -30,7 +30,8 @@ import { ResidenceService } from './core/services/residence.service';
     //ProductModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [], //Services
   bootstrap: [AppComponent]
