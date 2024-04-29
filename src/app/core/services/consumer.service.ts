@@ -7,14 +7,18 @@ import { Apartment } from '../models/apartement';
   providedIn: 'root',
 })
 export class ConsumerService {
-  baseUrl : string = 'http://localhost:3000/'
-  apiUrlResidence: string = this.baseUrl+'residence/';
-  apiUrlApartment: string = this.baseUrl+'apartement/';
+  baseUrl: string = 'http://localhost:3000/';
+  apiUrlResidence: string = this.baseUrl + 'residence/';
+  apiUrlApartment: string = this.baseUrl + 'apartement/';
 
   constructor(private http: HttpClient) {}
 
   getResidences() {
     return this.http.get<Residence[]>(this.apiUrlResidence);
+  }
+
+  getResidenceById(id:number) {
+    return this.http.get<Residence>(this.apiUrlResidence+id);
   }
 
   addResidence(body: Residence) {

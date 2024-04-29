@@ -84,4 +84,10 @@ listApartments: Apartment[] = []
       this.listApartementsFiltred,'surface',Number(this.searchText)
     );
   }
+
+  delete(id: number) {
+    this.consumer.deleteResidence(id).subscribe({
+      next : () => this.listResidences = this.listResidences.filter((r)=>r.id != id)
+    })
+  }
 }

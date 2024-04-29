@@ -15,8 +15,9 @@ const t: Routes = [
       { path: ':id', component: DetailsResidenceComponent },
     ],
   },
-  {path:'forma',component:FormApartementComponent},
+  { path: 'forma', component: FormApartementComponent },
   { path: 'form', component: FormResidenceComponent },
+  { path: 'form/update/:id', component: FormResidenceComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
