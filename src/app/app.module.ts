@@ -13,7 +13,8 @@ import { DetailsResidenceComponent } from './details-residence/details-residence
 import { AppRoutingModule } from './app-routing.module';
 import { FormApartementComponent } from './form-apartement/form-apartement.component';
 import { ResidenceService } from './core/services/residence.service';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { ResidenceComponent } from './residence/residence.component'
 @NgModule({ //Annotation / Decorator => TypeScript
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import {HttpClientModule} from '@angular/common/http'
     FormResidenceComponent,
     NotFoundComponent,
     DetailsResidenceComponent,
-    FormApartementComponent
+    FormApartementComponent,
+    ResidenceComponent
   ],
   imports: [
     BrowserModule,

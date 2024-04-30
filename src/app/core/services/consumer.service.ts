@@ -36,7 +36,7 @@ export class ConsumerService {
   // Apartment Consumer
 
   getApartments() {
-    return this.http.get(this.apiUrlApartment);
+    return this.http.get<Apartment[]>(this.apiUrlApartment);
   }
 
   addApartment(body: Apartment) {
